@@ -1,0 +1,46 @@
+{% extends "home.html"%}
+{%block body_block%}
+{%load crispy_forms_tags%}
+
+<style media="screen">
+  .jumbotron{
+    padding: 1rem 1rem;
+margin-bottom: 1rem;
+margin-top: 1rem;
+background-image: url(https://5.imimg.com/data5/KG/RH/RB/SELLER-11037327/sublimation-high-quality-t-shirts-500x500.jpeg);
+border-radius: .3rem;
+
+  }
+  #salejumbo{
+      padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    background-color: #ebf2f2;
+    border-radius: .1rem;
+    }
+  }
+  #salehead{
+    text-align: center;
+  }
+</style>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h2 id='salehead'>SALE</h2>
+  </div>
+</div>
+
+<div class="container">
+<div id="salejumbo">
+
+
+
+
+<form method="post" novalidate>
+{% csrf_token %}
+{{form|crispy}}
+<br>
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>
+</div>
+{%endblock%}
